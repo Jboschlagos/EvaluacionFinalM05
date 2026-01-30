@@ -1,0 +1,86 @@
+/* ---------------------------
+   Estilos generales
+--------------------------- */
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ---------------------------
+   Secciones e imágenes
+--------------------------- */
+section {
+  margin-bottom: 3rem;
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+section img:hover {
+  transform: scale(1.03);
+}
+
+/* ---------------------------
+   Navbar
+--------------------------- */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ---------------------------
+   Footer
+--------------------------- */
+.footer {
+  background-color: #212529;
+  color: #f8f9fa;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 5rem;
+}
+
+/* ---------------------------
+   Bloques de código SQL
+--------------------------- */
+pre {
+  max-height: 350px;
+  overflow-y: auto;
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+pre code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre; /* respeta formato SQL */
+}
+
+pre code::selection {
+  background-color: #cce5ff;
+}

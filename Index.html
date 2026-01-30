@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad SQL | Modelado y Consultas </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Prism CSS (resaltado de código) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="./assets/css/styel.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">Actividad SQL | Evaluación final módulo 5 </span>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+
+        <header class="mb-4">
+            <h1 class="mb-3">Actividad de Aprendizaje – SQL</h1>
+            <p clas cs="text-muted">
+                Evidencia de consultas SQL ejecutadas en PostgreSQL utilizando pgAdmin 4 y VS Code.
+                <Br>
+                Evaluacion final módulo 5 | Curso de Desarrollo Fullstack con Javascript  
+            </p>
+        </header>
+
+        <!-- BLOQUES DE CONSULTA -->
+
+        <section class="mb-5">
+            <h3>1. Actores que participaron en ambas teleseries, sueldo que obtuvieron en cada una y suma de ambos
+                sueldos</h3>
+            <img src="./assets/img/consulta01.png" class="img-fluid shadow rounded"
+                alt="Consulta 01 - Actores que participaron en ambas teleseries">
+        </section>
+
+        <section class="mb-5">
+            <h3>2. actores que participaron exclusivamente en soltera otra vez, con un sueldo mayor a 90.</h3>
+            <img src="./assets/img/consulta02.png" class="img-fluid shadow rounded"
+                alt="Consulta 02 actores que participaron exclusivamente en soltera otra vez, con un sueldo mayor a 90. ">
+        </section>
+        
+        <section class="mb-5">
+            <h3>3. Actores con sueldo inferior a 85 que actuaron en cualquiera de las dos teleseries, pero no en las
+                dos.</h3>
+            <img src="./assets/img/consulta03.png" class="img-fluid shadow rounded" alt="Consulta 3- Actores con sueldo inferior a 85">
+        </section>
+
+        <section>
+            <h3 class="mb-3">PARTE 2: MODELO ENTIDAD RELACIÓN </h3>
+        </section>
+
+        <section class="mb-5">
+            <h3>1. Diagrama E - R | Normalizado</h3>
+            <img src="./assets/img/diagramaActores.png" class="img-fluid shadow rounded" alt="Diagrama Actores Normalizado">
+        </section>
+
+        <section class="mb-5">
+            <h3>2. Script SQL del proyecto</h3>
+            <pre><code class="language-sql" id="sql-content">Cargando SQL...</code></pre>
+        </section>
+
+        <section class="mb-5">
+            <h3>3. Poblamiento de Tablas.</h3>
+            <img src="./assets/img/poblamientoDeTablas.png" class="img-fluid shadow rounded" alt="problamiento de tablas">
+        </section>
+      
+        <section class="mb-5">
+            <h3>3. Consulta que muestre todas las teleseries y todos los actores de reparto asociados. No incluya los actores de rol secundario.</h3>
+            <img src="./assets/img/consulta01S02.png" class="img-fluid shadow rounded" alt="consulta">
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-1">
+                Programas usados <br>
+                PostgreSQL · pgAdmin 4 · Visual Studio Code
+            </p>
+            <p class="mb-1">
+                Autor Jorge Bosch | Aprendiz Fullstack Javascript
+            </p>
+            <p class="mb-0">
+                © 2026 – Evidencia académica
+            </p>
+        </div>
+    </footer>
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+
+    <script>
+        fetch('./assets/sql/segundaParte.sql')
+            .then(response => response.text())
+            .then(data => {
+                const codeBlock = document.getElementById('sql-content');
+                codeBlock.textContent = data;
+                Prism.highlightElement(codeBlock);
+            })
+            .catch(err => {
+                document.getElementById('sql-content').textContent = 'Error cargando el archivo SQL';
+                console.error(err);
+            });
+    </script>
+
+</body>
+
+</html>
